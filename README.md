@@ -6,8 +6,6 @@
 
 A modern, real-time chat room application built with Python's socket programming and Tkinter GUI. This application enables multiple clients to connect to a central server and exchange messages in a group chat environment.
 
-![Chat Room Demo](screenshots/demo.png)
-
 ## ✨ Features
 
 ### Core Features
@@ -17,6 +15,9 @@ A modern, real-time chat room application built with Python's socket programming
 - User name input dialog on startup with validation
 - Graceful client disconnection handling
 - Server broadcast messaging system
+- Graceful server shutdown with client notifications
+- Automatic port cleanup and reuse
+- Robust error handling and process management
 
 ### GUI Features
 
@@ -59,7 +60,7 @@ source venv/bin/activate
 
 ## 🎮 Usage
 
-### Option 1: Quick Demo
+### Option 1: Quick Demo (Recommended)
 
 Run the demo script to automatically start a server and two clients with random names:
 
@@ -73,7 +74,8 @@ This will:
 - Launch two chat clients with unique random names
 - Open GUI windows for both clients
 - Enable chat between the clients
-- Clean up processes on Ctrl+C
+- Handle client closures gracefully
+- Clean up processes automatically
 
 ### Option 2: Manual Setup
 
@@ -94,17 +96,35 @@ python chatroom_client.py
    - Start chatting in the GUI window
    - Use the Quit button or close window to exit
 
-## 🔧 How It Works
+## 🔧 Technical Details
 
-The application uses Python's socket programming to create a TCP/IP server that handles multiple client connections:
+### Server Features
 
-- Server runs on localhost (127.0.0.1) by default
+- Runs on localhost (127.0.0.1) by default
 - Uses port 4000 for communication
 - Handles multiple simultaneous client connections using threads
-- Broadcasts messages to all connected clients
-- Implements proper cleanup on client disconnection
+- Implements automatic socket cleanup and port reuse
+- Graceful shutdown with client notifications
+- Robust error handling and recovery
 
-## �� Project Structure
+### Client Features
+
+- GUI-based interface using Tkinter
+- Automatic name validation
+- Real-time message updates
+- Connection status monitoring
+- Graceful disconnection handling
+- Error recovery and reconnection attempts
+
+### Process Management
+
+- Automatic cleanup of zombie processes
+- Port availability checking
+- Process monitoring and status tracking
+- Graceful shutdown of all components
+- Comprehensive error handling
+
+## 📁 Project Structure
 
 ```
 chat_room_application/
@@ -115,6 +135,34 @@ chat_room_application/
 ├── LICENSE           # MIT License
 └── README.md        # Project documentation
 ```
+
+## 🐛 Troubleshooting
+
+### Common Issues and Solutions
+
+1. Port Already in Use
+
+   - The application will automatically attempt to clean up and retry
+   - If that fails, manually kill Python processes:
+
+     ```bash
+     # Windows
+     taskkill /F /IM python.exe
+
+     # Linux/Mac
+     pkill -f python
+     ```
+
+2. Client Connection Issues
+
+   - Ensure the server is running first
+   - Check if the port is not blocked by firewall
+   - Try restarting the application
+
+3. Process Cleanup
+   - The demo script handles cleanup automatically
+   - For manual cleanup, use the commands above
+   - Wait a few seconds between stopping and starting
 
 ## 🤝 Contributing
 

@@ -24,19 +24,42 @@ wheels/
 venv/
 env/
 ENV/
+.env
+.venv
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-.DS_Store
+.project
+.pydevproject
+.settings/
 
-# Logs
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and databases
 *.log
-logs/
+*.sqlite
+*.db
 
 # Local development
 .env
 .env.local
-.env.*.local 
+.env.*.local
+local_settings.py
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.hypothesis/
+
+# Distribution
+dist/
+build/
+*.egg-info/ 

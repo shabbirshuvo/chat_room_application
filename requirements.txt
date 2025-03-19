@@ -1,2 +1,3 @@
-# No external dependencies required - using Python standard library only
-# Python version >= 3.6 recommended 
+# This application uses only Python standard library
+# No external dependencies required
+# Python >= 3.6 recommended 
