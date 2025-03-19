@@ -6,6 +6,13 @@
 
 A modern, real-time chat room application built with Python's socket programming and Tkinter GUI. This application enables multiple clients to connect to a central server and exchange messages in a group chat environment.
 
+## 🖥️ System Requirements
+
+- Any operating system (Windows, macOS, Linux)
+- Minimum 512MB RAM
+- 50MB free disk space
+- Display resolution: 1024x768 or higher
+
 ## ✨ Features
 
 ### Core Features
@@ -19,7 +26,7 @@ A modern, real-time chat room application built with Python's socket programming
 - Automatic port cleanup and reuse
 - Robust error handling and process management
 
-### GUI Features
+### GUI Features 🎨
 
 - Clean and intuitive chat window interface
 - Dedicated Quit button with confirmation dialog
@@ -29,6 +36,14 @@ A modern, real-time chat room application built with Python's socket programming
 - Proper window closing handling with cleanup
 - Error handling with user-friendly message boxes
 - Resizable window support for better UX
+
+### Process Management 🔄
+
+- Automatic cleanup of zombie processes
+- Port availability checking
+- Process monitoring and status tracking
+- Graceful shutdown of all components
+- Comprehensive error handling
 
 ## 🚀 Quick Start
 
@@ -116,7 +131,7 @@ python chatroom_client.py
 - Graceful disconnection handling
 - Error recovery and reconnection attempts
 
-### Process Management
+### Process Management 🔄
 
 - Automatic cleanup of zombie processes
 - Port availability checking
@@ -136,11 +151,9 @@ chat_room_application/
 └── README.md        # Project documentation
 ```
 
-## 🐛 Troubleshooting
+## 🚫 Common Issues and Solutions
 
-### Common Issues and Solutions
-
-1. Port Already in Use
+1. Port Already in Use 🔌
 
    - The application will automatically attempt to clean up and retry
    - If that fails, manually kill Python processes:
@@ -153,16 +166,24 @@ chat_room_application/
      pkill -f python
      ```
 
-2. Client Connection Issues
+2. Client Connection Issues 🌐
 
    - Ensure the server is running first
    - Check if the port is not blocked by firewall
    - Try restarting the application
 
-3. Process Cleanup
+3. Process Cleanup 🧹
+
    - The demo script handles cleanup automatically
    - For manual cleanup, use the commands above
    - Wait a few seconds between stopping and starting
+
+## ✉️ Contact
+
+For any questions or feedback, feel free to reach out:
+
+- Email: your.email@example.com (optional)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername) (optional)
 
 ## 🤝 Contributing
 
